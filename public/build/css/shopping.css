@@ -323,6 +323,7 @@ section.nagivation .container .box.social ul li:nth-child(3){
 section.nagivation .container .box.social ul li:nth-child(3) a{
     color: #fff;
 }
+
 /* slide */
 section.slide .slick_slide div{
     position: relative;

@@ -59,13 +59,19 @@
                     </a>
                 </div>
                 <div class="box">
+                    <!-- <div class="box__search">
+                        <input type="search" class="search__input" id="search__input" placeholder="Nhập từ khóa ...">
+                        <button id="search"><i class="fas fa-search"></i></button>
+                    </div> -->
+                </div>
+                <!-- <div class="box">
                     <div class="box__search">
                         <input type="search" class="search__input" id="search__input" placeholder="Nhập từ khóa ...">
                         <button id="search"><i class="fas fa-search"></i></button>
                     </div>
                     <div class="search__list">
                         <ul>
-                            <!-- <li>
+                            <li>
                                 <a href="">
                                     <div class="images__box">
                                         <img src="./public/uploads/images/product/6550ec656667d-tY1L567cmWwKrviQDHkyNaRBbxJ93O8MnUT0DdusXEGFSAZjolV2gChqfPe4z.jpg"
@@ -100,10 +106,10 @@
                                         <span>200,000 đ</span>
                                     </div>
                                 </a>
-                            </li> -->
+                            </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="box">
                     <div class="cart">
                         <a href="javascript:void(0)" class="open__cart">

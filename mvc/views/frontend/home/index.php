@@ -2,7 +2,7 @@
 <!-- sản phẩm -->
 <?php if(isset($product) && $product != NULL){?>
 <section class="product">
-    <div class="container">
+    <div class="container" id="target-section">
         <div class="title__product">
             <h3>Sản phẩm</h3>
         </div>
