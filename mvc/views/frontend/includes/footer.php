@@ -17,9 +17,9 @@
             <div class="item">
                 <h3>Danh mục sản phẩm</h3>
                 <ul>
-                    <li><a href="">Iphone</a></li>
-                    <li><a href="">SamSung</a></li>
-                    <li><a href="">Xiaomi</a></li>
+                    <li><a href="/shopping/iphone">Iphone</a></li>
+                    <li><a href="/shopping/sam-sung">SamSung</a></li>
+                    <li><a href="/shopping/xiaomi">Xiaomi</a></li>
                 </ul>
             </div>
             <div class="item">
