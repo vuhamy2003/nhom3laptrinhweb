@@ -44,6 +44,11 @@
                 <span><?= number_format($data['datas'][0]['total']) ?></span>
             </p>
         </div>
+            <div class="">
+        <p style="margin-bottom: 5px"><strong>Trạng thái</strong>: 
+            <span><?= $data['datas'][0]['status'] ?></span>
+        </p>
+    </div>
     </div>
     <div class="x_content">
         <div class="table-responsive">

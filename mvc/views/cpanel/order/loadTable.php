@@ -5,6 +5,7 @@
             <th class="column-title">Ghi chú</th>
             <th class="column-title text-center"> Giá trị đơn hàng</th>
             <th class="column-title text-center">Ngày tạo </th>
+            <th class="column-title text-center">Trạng thái</th>
             <th class="column-title no-link last"><span class="nobr">Chức năng</span>
             </th>
         </tr>
@@ -20,6 +21,12 @@
             <td class="text-center"><?= number_format($val['total']) ?> đ</td>
 
             <td class="text-center"><?= date('d/m/Y' , strtotime($val['created_at'])) ?></td>
+
+            <td class="text-center">
+            <input type="checkbox" class="status-checkbox" data-id="<?= $val['id'] ?>"
+                <?= $val['status'] == 'Đã liên hệ với khách hàng' ? 'checked' : '' ?>>
+            </td>
+
             <td>
                 <a href="javascript:void(0)" onclick="del(<?= $val['id'] ?>)" id="del<?= $val['id'] ?>"
                     data-control="<?= $data['template'] ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -66,3 +73,28 @@ function toggle(__this) {
     }
 }
 </script>
+
+<script>
+$(document).ready(function () {
+    $('.status-checkbox').change(function () {
+        let orderId = $(this).data('id');
+        let status = $(this).is(':checked') ? "Đã liên hệ với khách hàng" : "";
+
+        $.ajax({
+            url: 'cpanel/order/update_status',
+            method: 'POST',
+            data: { id: orderId, status: status },
+            success: function (response) {
+                let res = JSON.parse(response);
+                if (res.result) {
+                    alert(res.message);
+                } else {
+                    alert('Có lỗi xảy ra!');
+                }
+            }
+        });
+    });
+});
+</script>
+
+

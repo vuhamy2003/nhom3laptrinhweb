@@ -143,5 +143,29 @@ class order extends controller{
             );
         }
     }
-   
+    public function update_status() {
+        if (isset($_POST['id']) && isset($_POST['status'])) {
+            $id = $_POST['id'];
+            $status = $_POST['status'];
+    
+            $result = $this->OrderModels->update(['status' => $status], ['id' => $id]);
+    
+            if ($result) {
+                echo json_encode([
+                    'result' => true,
+                    'message' => 'Cập nhật trạng thái thành công!'
+                ]);
+            } else {
+                echo json_encode([
+                    'result' => false,
+                    'message' => 'Cập nhật trạng thái thất bại!'
+                ]);
+            }
+        } else {
+            echo json_encode([
+                'result' => false,
+                'message' => 'Dữ liệu không hợp lệ!'
+            ]);
+        }
+    }
 }

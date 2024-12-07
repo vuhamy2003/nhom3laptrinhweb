@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2024 at 07:53 AM
+-- Generation Time: Dec 07, 2024 at 06:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -196,8 +196,16 @@ CREATE TABLE `tbl_orders` (
   `email` varchar(255) NOT NULL,
   `note` text NOT NULL,
   `total` int(11) NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `status` varchar(50) DEFAULT 'Chưa liên hệ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tbl_orders`
+--
+
+INSERT INTO `tbl_orders` (`id`, `accountId`, `address`, `phone`, `email`, `note`, `total`, `created_at`, `status`) VALUES
+(59, 19, 'P1108, chung cu Ban to chuc TW', '0123456789', 'vuhamy@gmail.com', 'Để dưới phòng bảo vệ.', 43190000, '2024-12-06 22:48:17', '');
 
 -- --------------------------------------------------------
 
@@ -212,6 +220,14 @@ CREATE TABLE `tbl_order_detail` (
   `price` int(11) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tbl_order_detail`
+--
+
+INSERT INTO `tbl_order_detail` (`id`, `orderId`, `productId`, `price`, `qty`) VALUES
+(73, 59, 20, 11990000, 1),
+(74, 59, 9, 31200000, 1);
 
 -- --------------------------------------------------------
 
@@ -320,7 +336,8 @@ INSERT INTO `tbl_product` (`id`, `name`, `slug`, `cateID`, `price`, `image`, `th
 (15, 'Samsung Galaxy S23 Ultra 5G', 'samsung-galaxy-s23-ultra-5g', 2, 22990000, 'public/uploads/images/product/6550f49a7e7a5-ldLJPKqtW7k2yYxMch1ADFmzXBuDTGS5aVer8OnsR9N4U3g60jvQfEwoHbCiZ.jpg', 'public/uploads/images/product/thumb/6550f49a7e7a5-NygfXz8UaA5WZn4tFkrSVBi73meLwR1MCPEuosqbKJdQcD06T9hGOjDHvYx2l.jpg', 1, '<p><img alt=\"\" src=\"http://localhost/shopping/public/cpanel/ckfinder/userfiles/images/iphone-12-den-1-org.jpg\" style=\"height:680px; width:1020px\" /></p>\r\n\r\n<h3>Th&ocirc;ng tin sản phẩm</h3>\r\n\r\n<h3><a href=\"https://www.thegioididong.com/dtdd/samsung-galaxy-s23-ultra\" target=\"_blank\" title=\"Tham khảo điện thoại Samsung Galaxy S23 Ultra 5G 256GB tại Thế Giới Di Động\">Samsung Galaxy S23 Ultra 5G 256GB</a>&nbsp;l&agrave; chiếc smartphone cao cấp nhất của nh&agrave; Samsung, sở hữu cấu h&igrave;nh kh&ocirc;ng tưởng với con chip khủng được&nbsp;Qualcomm tối ưu ri&ecirc;ng cho d&ograve;ng Galaxy&nbsp;v&agrave; camera l&ecirc;n đến 200 MP, xứng danh l&agrave; chiếc flagship Android được mong đợi nhất trong năm 2023.</h3>\r\n\r\n<h3>Tạo h&igrave;nh sang trọng đầy tinh tế</h3>\r\n\r\n<p>Về thiết kế th&igrave; Samsung Galaxy S23 Ultra sẽ tiếp tục thừa hưởng kiểu d&aacute;ng sang trọng đến từ thế hệ trước, vẫn l&agrave; bộ khung kim loại, mặt lưng k&iacute;nh c&ugrave;ng kiểu tạo h&igrave;nh bo cong nhẹ ở cạnh b&ecirc;n v&agrave; m&agrave;n h&igrave;nh.</p>\r\n', '[{\"name\":\"C\\u00f4ng ngh\\u1ec7 m\\u00e0n h\\u00ecnh\",\"value\":\"Dynamic AMOLED 2X 6.4\\\" Full HD+\"},{\"name\":\"H\\u1ec7 \\u0111i\\u1ec1u h\\u00e0nh\",\"value\":\"Android 13\"},{\"name\":\"Camera sau\",\"value\":\"Ch\\u00ednh 50 MP & Ph\\u1ee5 12 MP, 8 MP\"},{\"name\":\"Camera tr\\u01b0\\u1edbc\",\"value\":\"2000 nits\"},{\"name\":\"Chip\",\"value\":\"Exynos 2200 8 nh\\u00e2n\"},{\"name\":\"RAM\",\"value\":\"8 GB\"},{\"name\":\"Pin, S\\u1ea1c\",\"value\":\"4500 mAh25 W\"},{\"name\":\"SIM\",\"value\":\"2 Nano SIM ho\\u1eb7c 1 Nano SIM + 1 eSIMH\\u1ed7 tr\\u1ee3 5G\"}]', '2024-12-07 22:51:54', '0000-00-00'),
 (16, 'Samsung Galaxy S23 5G 256GB ', 'samsung-galaxy-s23-5g-256gb-', 2, 19800000, 'public/uploads/images/product/6550f50784b1b-YlTRhgBaq0E9sdv6Hi82ADNmw1fDFX5QrxMukjcyS3zPGZ4oCeKJb7tVLUnWO.jpg', 'public/uploads/images/product/thumb/6550f50784b1b-xnvKL3qoeM6yOgXZr80Jh7ml2sbAkQVPDYGiSNFjdWHtcTfU9zEDw54CRBua1.jpg', 1, '<h3>Th&ocirc;ng tin sản phẩm</h3>\r\n\r\n<h3><a href=\"https://www.thegioididong.com/dtdd/samsung-galaxy-s23-plus\" target=\"_blank\" title=\"Tham khảo mẫu điện thoại Samsung Galaxy S23 Plus 5G 256GB đang kinh doanh tại Thế Giới Di Động \">Samsung Galaxy S23+ 5G 256GB</a>&nbsp;l&agrave; chiếc điện thoại thuộc d&ograve;ng cao cấp nhất của Samsung được giới thiệu v&agrave;o th&aacute;ng 02/2023. M&aacute;y sở hữu một v&agrave;i điểm ấn tượng như camera c&oacute; khả năng quay video 8K, c&ugrave;ng với đ&oacute; l&agrave; con chip Snapdragon 8 Gen 2 mạnh mẽ h&agrave;ng đầu giới điện thoại Android.</h3>\r\n\r\n<h3>Vẻ ngo&agrave;i đẳng cấp xứng danh flagship</h3>\r\n\r\n<p>Ấn tượng đầu ti&ecirc;n của m&igrave;nh khi tr&ecirc;n tay chiếc Galaxy S23+ l&agrave; c&aacute;i nh&igrave;n vu&ocirc;ng vắn sang trọng, tổng thể m&aacute;y được ho&agrave;n thiện từ c&aacute;c loại chất liệu cao cấp gi&uacute;p mang đến trải nghiệm cầm nắm đầm tay hơn.&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost/shopping/public/cpanel/ckfinder/userfiles/images/samsung-galaxy-z-fold5-260723-095313.jpg\" style=\"height:570px; width:1020px\" /></p>\r\n', '[{\"name\":\"C\\u00f4ng ngh\\u1ec7 m\\u00e0n h\\u00ecnh\",\"value\":\"OLED\"},{\"name\":\"H\\u1ec7 \\u0111i\\u1ec1u h\\u00e0nh\",\"value\":\"Android 13\"},{\"name\":\"Camera sau\",\"value\":\"Ch\\u00ednh 50 MP & Ph\\u1ee5 12 MP, 8 MP\"},{\"name\":\"Camera tr\\u01b0\\u1edbc\",\"value\":\"10 MP & 4 MP\"},{\"name\":\"Chip\",\"value\":\"Exynos 2200 8 nh\\u00e2n\"},{\"name\":\"RAM\",\"value\":\"12GB\"}]', '2024-12-07 22:53:43', '2024-12-08'),
 (17, 'Samsung Galaxy Z Flip4 5G 128GB ', 'samsung-galaxy-z-flip4-5g-128gb-', 2, 14900000, 'public/uploads/images/product/6550f5856700e-Q5dSfWtJlcCxGjoqiD1UA6Ra2FwmM4XOgPNs3DrEby9nuzvYh7HLKTVZe0B8k.jpg', 'public/uploads/images/product/thumb/6550f5856700e-GQ5CFdExOLoPY6U9KkvseWHMcmT1fiB7g2SDNRthbulJ0jVwaXA4nzZyqrD38.jpg', 1, '<h3>Th&ocirc;ng tin sản phẩm</h3>\r\n\r\n<h3><a href=\"https://www.thegioididong.com/dtdd/samsung-galaxy-z-flip4\" target=\"_blank\" title=\"Tham khảo điện thoại đang kinh doanh tại Thế Giới Di Động\">Samsung Galaxy Z Flip4 128GB</a>&nbsp;đ&atilde; ch&iacute;nh thức ra mắt thị trường c&ocirc;ng nghệ, đ&aacute;nh dấu sự trở lại của Samsung tr&ecirc;n con đường định hướng người d&ugrave;ng về sự tiện lợi tr&ecirc;n những chiếc điện thoại gập. Với độ bền được gia tăng c&ugrave;ng kiểu thiết kế đẹp mắt gi&uacute;p Flip4 trở th&agrave;nh một trong những t&acirc;m điểm s&aacute;ng gi&aacute; cho nửa cuối năm 2022.</h3>\r\n\r\n<h3>Dẫn đầu xu hướng thiết kế mới&nbsp;</h3>\r\n\r\n<p>C&oacute; lẽ điện thoại gập đ&atilde; kh&ocirc;ng c&ograve;n l&agrave; c&aacute;i t&ecirc;n qu&aacute; xa lạ bởi nhiều &ocirc;ng lớn trong ng&agrave;nh sản xuất thiết bị di động đ&atilde; cho ra mắt kh&aacute; nhiều sản phẩm c&oacute; thiết kế tương tự, gần đ&acirc;y nhất th&igrave; c&oacute; sự g&oacute;p mặt của chiếc flagship đến từ nh&agrave; Samsung mang t&ecirc;n Galaxy Z Flip4.&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><img alt=\"\" src=\"http://localhost/shopping/public/cpanel/ckfinder/userfiles/images/iphone-15-512gb-131023-110626(1).jpg\" style=\"height:1200px; width:391px\" /></p>\r\n', '[{\"name\":\"M\\u00e0n h\\u00ecnh\",\"value\":\"Ch\\u00ednh: Dynamic AMOLED 2X, Ph\\u1ee5: Super AMOLEDChi\\u0301nh 6.7\"},{\"name\":\"H\\u1ec7 \\u0111i\\u1ec1u h\\u00e0nh\",\"value\":\"Android 12\"},{\"name\":\"Camera sau\",\"value\":\"Ch\\u00ednh 50 MP & Ph\\u1ee5 12 MP, 10 MP\"},{\"name\":\"Camera tr\\u01b0\\u1edbc\",\"value\":\"10 MP & 4 MP\"},{\"name\":\"Chip\",\"value\":\"Snapdragon 8 Gen 2 for Galaxy\"},{\"name\":\"RAM\",\"value\":\"8 GB\"}]', '2024-12-07 22:55:49', '2024-12-08'),
-(18, 'Xiaomi Redmi 12 4GB', 'xiaomi-redmi-12-4gb', 3, 3490000, 'public/uploads/images/product/6550f60513097-DGiQ7Yvu45OshAVmyDbK6w1C2eM0HftgRTWzqcUoXSExBJ38ar9jZlndNLFkP.jpg', 'public/uploads/images/product/thumb/6550f60513097-mv9Vn01hKgbAQo2SMxBtfHrO6wDc4z5J8yYGqukW7siaFDeT3NCUlEjdLRXPZ.jpg', 1, '<h3>Th&ocirc;ng tin sản phẩm</h3>\r\n\r\n<h3>Xiaomi Redmi 12 mẫu điện thoại mới nhất được nh&agrave;&nbsp;<a href=\"https://www.thegioididong.com/dtdd-xiaomi\" target=\"_blank\" title=\"Tham khảo một số mẫu điện thoại Xiaomi tại Thế Giới Di Động \">Xiaomi</a>&nbsp;tung ra v&agrave;o th&aacute;ng 06/2023 khiến cho cộng đồng đam m&ecirc; c&ocirc;ng nghệ v&ocirc; c&ugrave;ng th&iacute;ch th&uacute;. M&aacute;y kho&aacute;c l&ecirc;n m&igrave;nh một vẻ ngo&agrave;i c&aacute; t&iacute;nh, m&agrave;n h&igrave;nh lớn đem đến trải nghiệm đ&atilde; mắt c&ugrave;ng một hiệu năng ổn định với mọi t&aacute;c vụ.</h3>\r\n\r\n<h3>Vẻ ngo&agrave;i đơn giản</h3>\r\n\r\n<p>Thiết kế của&nbsp;<a href=\"https://www.thegioididong.com/dtdd/xiaomi-redmi-12-4gb\" target=\"_blank\" title=\"Tham khảo một số mẫu điện thoại Xiaomi Redmi 12 4GB tại Thế Giới Di Động \">Xiaomi Redmi 12 4GB&nbsp;</a>được lấy cảm hứng từ sự tối giản khi mặt lưng được l&agrave;m từ k&iacute;nh b&oacute;ng bẩy đi c&ugrave;ng với th&acirc;n m&aacute;y kh&aacute; mỏng nhẹ mang đến vẻ ngo&agrave;i thời trang, trẻ trung c&ugrave;ng khả năng cầm nắm tốt hơn khi sử dụng trong thời gian d&agrave;i</p>\r\n', '[{\"name\":\"M\\u00e0n h\\u00ecnh\",\"value\":\"IPS LCD6.79\"},{\"name\":\"H\\u1ec7 \\u0111i\\u1ec1u h\\u00e0nh\",\"value\":\"Android 13\"},{\"name\":\"Camera sau\",\"value\":\"Ch\\u00ednh 50 MP & Ph\\u1ee5 12 MP, 8 MP\"},{\"name\":\"Camera tr\\u01b0\\u1edbc\",\"value\":\"10 MP & 4 MP\"},{\"name\":\"Chip\",\"value\":\"Exynos 2200 8 nh\\u00e2n\"},{\"name\":\"RAM\",\"value\":\"8 GB\"},{\"name\":\"Pin, S\\u1ea1c\",\"value\":\"4500 mAh25 W\"}]', '2024-12-07 22:57:57', '2024-12-06');
+(18, 'Xiaomi Redmi 12 4GB', 'xiaomi-redmi-12-4gb', 3, 3490000, 'public/uploads/images/product/6550f60513097-DGiQ7Yvu45OshAVmyDbK6w1C2eM0HftgRTWzqcUoXSExBJ38ar9jZlndNLFkP.jpg', 'public/uploads/images/product/thumb/6550f60513097-mv9Vn01hKgbAQo2SMxBtfHrO6wDc4z5J8yYGqukW7siaFDeT3NCUlEjdLRXPZ.jpg', 1, '<h3>Th&ocirc;ng tin sản phẩm</h3>\r\n\r\n<h3>Xiaomi Redmi 12 mẫu điện thoại mới nhất được nh&agrave;&nbsp;<a href=\"https://www.thegioididong.com/dtdd-xiaomi\" target=\"_blank\" title=\"Tham khảo một số mẫu điện thoại Xiaomi tại Thế Giới Di Động \">Xiaomi</a>&nbsp;tung ra v&agrave;o th&aacute;ng 06/2023 khiến cho cộng đồng đam m&ecirc; c&ocirc;ng nghệ v&ocirc; c&ugrave;ng th&iacute;ch th&uacute;. M&aacute;y kho&aacute;c l&ecirc;n m&igrave;nh một vẻ ngo&agrave;i c&aacute; t&iacute;nh, m&agrave;n h&igrave;nh lớn đem đến trải nghiệm đ&atilde; mắt c&ugrave;ng một hiệu năng ổn định với mọi t&aacute;c vụ.</h3>\r\n\r\n<h3>Vẻ ngo&agrave;i đơn giản</h3>\r\n\r\n<p>Thiết kế của&nbsp;<a href=\"https://www.thegioididong.com/dtdd/xiaomi-redmi-12-4gb\" target=\"_blank\" title=\"Tham khảo một số mẫu điện thoại Xiaomi Redmi 12 4GB tại Thế Giới Di Động \">Xiaomi Redmi 12 4GB&nbsp;</a>được lấy cảm hứng từ sự tối giản khi mặt lưng được l&agrave;m từ k&iacute;nh b&oacute;ng bẩy đi c&ugrave;ng với th&acirc;n m&aacute;y kh&aacute; mỏng nhẹ mang đến vẻ ngo&agrave;i thời trang, trẻ trung c&ugrave;ng khả năng cầm nắm tốt hơn khi sử dụng trong thời gian d&agrave;i</p>\r\n', '[{\"name\":\"M\\u00e0n h\\u00ecnh\",\"value\":\"IPS LCD6.79\"},{\"name\":\"H\\u1ec7 \\u0111i\\u1ec1u h\\u00e0nh\",\"value\":\"Android 13\"},{\"name\":\"Camera sau\",\"value\":\"Ch\\u00ednh 50 MP & Ph\\u1ee5 12 MP, 8 MP\"},{\"name\":\"Camera tr\\u01b0\\u1edbc\",\"value\":\"10 MP & 4 MP\"},{\"name\":\"Chip\",\"value\":\"Exynos 2200 8 nh\\u00e2n\"},{\"name\":\"RAM\",\"value\":\"8 GB\"},{\"name\":\"Pin, S\\u1ea1c\",\"value\":\"4500 mAh25 W\"}]', '2024-12-07 22:57:57', '2024-12-06'),
+(20, 'Xiaomi 14T 12GB/512GB', 'xiaomi-14t-12gb-512gb', 3, 11990000, 'public/uploads/images/product/6752ab73db834-FiEbGYeB2ASLCWn0avwyXmo9QcjlxD5JVk43TROKP86HrqtguNh1ZMfDUsd7z.png', 'public/uploads/images/product/thumb/6752ab73db834-seB7lrYg9LDfZuCWxDby3dn0GXkazTjUR61Jh5tPEMOFocHqS4iQNAKvV8wm2.png', 1, '<p><strong>Siu sịn</strong></p>\r\n', '[{\"name\":\"m\\u00e0n h\\u00ecnh\",\"value\":\"led\"},{\"name\":\"hai\",\"value\":\"x\\u1ecbn\"},{\"name\":\"ba\",\"value\":\"\\u0111\\u1ec9nh\"},{\"name\":\"b\\u1ed1n\",\"value\":\"5\"},{\"name\":\"n\\u0103m\",\"value\":\"cfsdssg\"}]', '2024-12-06 14:44:51', '2024-12-06');
 
 -- --------------------------------------------------------
 
@@ -352,7 +369,8 @@ INSERT INTO `tbl_slug` (`id`, `name`, `type`) VALUES
 (18, 'samsung-galaxy-s23-5g-256gb-', 2),
 (19, 'samsung-galaxy-z-flip4-5g-128gb-', 2),
 (20, 'xiaomi', 1),
-(21, 'xiaomi-redmi-12-4gb', 2);
+(21, 'xiaomi-redmi-12-4gb', 2),
+(26, 'xiaomi-14t-12gb-512gb', 2);
 
 --
 -- Indexes for dumped tables
@@ -462,19 +480,19 @@ ALTER TABLE `tbl_menu`
 -- AUTO_INCREMENT for table `tbl_module`
 --
 ALTER TABLE `tbl_module`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `tbl_photo`
@@ -486,13 +504,13 @@ ALTER TABLE `tbl_photo`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_slug`
 --
 ALTER TABLE `tbl_slug`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
