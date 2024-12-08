@@ -72,7 +72,7 @@
                 </div>
                 <div class="item">
                     <div>
-                        <textarea type="text" name="data_post[note]" class="form-control" placeholder="Ghi chú" required
+                        <textarea type="text" name="data_post[note]" class="form-control" placeholder="Ghi chú"
                             rows="5"></textarea>
                     </div>
                 </div>
