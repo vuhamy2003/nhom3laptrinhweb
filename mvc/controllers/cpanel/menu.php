@@ -4,7 +4,7 @@ require_once "./mvc/controllers/MyController.php";
 class menu extends controller
 {
     public $template    = 'cpanel/menu';
-    public $title       = 'danh mục sản phẩm';
+    public $title       = 'menu';
     public $message     = [];
     public function __construct()
     {
@@ -91,7 +91,7 @@ class menu extends controller
             $return = json_decode($result, true);
             if ($return['type']=="sucessFully") {
                 $redirect = new redirect($this->template.'/'.'index');
-                $redirect->setFlash('flash', 'Thêm thành công danh');
+                $redirect->setFlash('flash', 'Thêm thành công menu');
             }
         }
         // parentID

@@ -144,7 +144,7 @@ class product extends controller
             }
             if ($return['type']=="sucessFully") {
                 $redirect = new redirect($this->template.'/'.'index');
-                $redirect->setFlash('flash', 'Thêm thành công danh mục sản phẩm');
+                $redirect->setFlash('flash', 'Thêm thành công sản phẩm');
             }
         }
         // parentID

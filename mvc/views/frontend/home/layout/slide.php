@@ -4,14 +4,14 @@
         <div>
             <img src="public/build/images/anhbia.png" alt="">
             <div class="description">
-                <a href="#target-section">Mua ngay</a>
+                <a href="#target-section">Đặt hàng trước ngay</a>
                 
             </div>
         </div>
         <div>
             <img src="public/build/images/anhbia2.png" alt="">
             <div class="description">
-                <a href="#target-section">Mua ngay</a>
+                <a href="#target-section">Đặt hàng trước ngay</a>
                 
             </div>
         </div>

@@ -2,6 +2,7 @@
      <div class="form">
          <h3>Thông tin chung</h3>
          <form action="" method="post">
+         <div class="button_submit"><button type="submit"><a href="http://localhost/shopping/">Quay lại</a></button></div>
              <div class="row">
                  <div class="col-6">
                      <label for="">Họ và tên</label>

@@ -128,7 +128,7 @@ class category extends controller
                 $data_post['slug'] = $slug;
                 $data_post['publish'] ? $publish = 1:$publish = 0;
                 $data_post['publish']  = $publish;
-                $data_post['update_at']  = gmdate('Y-m-d H:i:s', time() + 7*3600);
+                $data_post['updated_at']  = gmdate('Y-m-d H:i:s', time() + 7*3600);
                 $result = $this->CategoryModels->update($data_post, ['id' => $id]);
                 $return = json_decode($result, true);
                 if ($return['type']=="sucessFully") {
