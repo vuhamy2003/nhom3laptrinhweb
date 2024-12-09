@@ -46,7 +46,7 @@
         </div>
         <div class="payment">
             <div class="box__left">
-                <a href="#" class="payment__btn">Tiếp tục mua hàng</a>
+                <a href="#" class="payment__btn">Tiếp tục chọn sản phẩm</a>
             </div>
             <div class="box">
                 <p><strong>Tổng giá:</strong><span id="total_Price">
@@ -62,14 +62,14 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <a href="thanh-toan.html" style="text-decoration: none; color: #fff">Tiến hành thanh toán</a>
+                    <a href="thanh-toan.html" style="text-decoration: none; color: #fff">Tiến hành đặt trước</a>
                 </button>
             </div>
         </div>
         <?php } else { ?>
         <div class="payment">
             <div class="box__left">
-                Không có sản phẩm nào ! <a href="#" class="payment__btn">Tiếp tục mua hàng</a>
+                Không có sản phẩm nào ! <a href="#" class="payment__btn">Tiếp tục chọn sản phẩm</a>
             </div>
         </div>
         <?php } ?>

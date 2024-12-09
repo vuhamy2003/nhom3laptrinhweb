@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <button type="submit">Thanh toán</button>
+                    <button type="submit">Đặt trước</button>
                 </div>
             </form>
         </div>
