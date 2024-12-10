@@ -62,7 +62,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <a href="thanh-toan.html" style="text-decoration: none; color: #fff">Tiến hành thanh toán</a>
+                    <a href="thanh-toan.html" style="text-decoration: none; color: #fff">Tiến hành đặt trước</a>
                 </button>
             </div>
         </div>
