@@ -25,8 +25,8 @@
             <div class="item">
                 <h3>Chính sách</h3>
                 <ul>
-                    <li><a href="">Chính sách đặt hàng</a></li>
-                    <li><a href="">Chính sách bảo hành</a></li>
+                    <li><a href="/shopping/mvc/views/frontend/includes/dathang.php">Chính sách đặt hàng</a></li>
+                    <li><a href="/shopping/mvc/views/frontend/includes/baohanh.php">Chính sách bảo hành</a></li>
                 </ul>
             </div>
             
